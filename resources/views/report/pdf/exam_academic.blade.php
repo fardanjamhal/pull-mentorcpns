@@ -33,7 +33,7 @@
     <body>
         @if($setting)
             <br>
-            <img src="{{ $setting->app_url }}/storage/upload_files/settings/{{ $setting->logo }}" alt="" width="150px" style="position: absolute; margin-top:-50px;">
+            <img src="{{ $setting->app_url }}/storage/upload_files/settings/{{ $setting->logo }}" alt="" width="80px" style="position: absolute; margin-top:-50px;">
         @endif
         <br><br>
         <center>    

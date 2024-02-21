@@ -93,7 +93,7 @@
                     <Link href="/admin/announcements" class="menu-clicked">
 						<div class="parent-icon"><i class='bx bx-message-square-detail'></i>
 						</div>
-						<div class="menu-title">Pengumuman</div>
+						<div class="menu-title">Pemberitahuan</div>
 					</Link>
                 </li>
                 <li>
@@ -174,15 +174,15 @@
                 <li>
                     <Link href="/user/announcements" class="menu-clicked">
 						<div class="parent-icon"><i class='bx bx-message-square-detail'></i></div>
-						<div class="menu-title">Pengumuman</div>
+						<div class="menu-title">Pemberitahuan</div>
 					</Link>
                 </li>
-                <li>
+                <!-- <li>
                     <Link href="/user/faqs" class="menu-clicked">
 						<div class="parent-icon"><i class='bx bx-message-add'></i></div>
 						<div class="menu-title">Faq</div>
 					</Link>
-                </li>
+                </li> -->
                 <li class="menu-label">Try Out</li>
                 <li>
 					<a href="javascript:;" class="has-arrow">

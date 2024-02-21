@@ -45,7 +45,6 @@
                                 </div>
                                 <hr/>
                                 <p class="card-text" style="min-height: 60px;">{{ materialModule.description }}</p>
-                                <hr>
                                 <div class="text-center">
                                     <p>Kategori Member</p>
                                     <span v-if="materialModule.member_categories" v-for="member_categories in materialModule.member_categories" class="badge bg-success m-1">

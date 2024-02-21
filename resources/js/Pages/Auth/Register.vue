@@ -14,8 +14,11 @@
                         <div class="card-body">
                             <div class="border p-4 rounded">
                                 <div class="text-center">
+                                    <div style="text-align:center;" v-if="$page.props.setting && $page.props.setting.logo">
+                                        <img v-bind:src="'/storage/upload_files/settings/' + $page.props.setting.logo" style="height:90px;"/>
+                                    </div>
                                     <h3 class="">Registrasi</h3>
-                                    <p>Sudah memiliki akun ? <Link href="/login">Login disini</Link>
+                                    <p>Sudah punya akun ? <Link href="/login">Login disini</Link>
                                     </p>
                                 </div>
                                 <div class="form-body">

@@ -6,62 +6,93 @@
     <div class="page-wrapper">
         <div class="page-content">
             <div v-if="$page.props.setting.purchase_type != 1" class="row row-cols-1 row-cols-md-2 row-cols-xl-4" v-for="(totalDataInCategory, index) in totalDataInCategories" :key="index">
-                <div class="col">
-                    <div class="card radius-10 border-start border-0 border-3 border-primary">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <p class="mb-0 text-bold">Latihan Soal {{ totalDataInCategory.name }}</p>
-                                    <h6 class="my-1">{{ totalDataInCategory.exam_count }} Soal</h6>
-                                </div>
-                                <div class="text-primary ms-auto font-35"><i class='bx bx-file'></i>
+                
+                        <div v-if="$page.props.voucherCategories.length > 1">
+                            <Link href="/user/categories" class="menu-clicked">
+                               Latihan Soal
+					        </Link>
+                        </div>
+                        <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
+                            <Link :href="`/user/categories/${category.id}/lesson-categories`" class="menu-clicked">
+                                <div class="col">
+                                    <div class="card radius-10 border-start border-0 border-3 border-primary">
+                                        <div class="card-body" style="background-color: #F6F5F5;">
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <p class="mb-0 text-bold">Latihan Soal {{ totalDataInCategory.name }}</p>
+                                                    <h6 class="my-1">{{ totalDataInCategory.exam_count }} Soal</h6>
+                                                </div>
+                                                <div class="text-primary ms-auto font-35"><i class='bx bx-file'></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </Link>
+                        </div>
+
+                        <div v-if="$page.props.voucherCategories.length > 1">
+                            <Link href="/user/exam-groups" class="menu-clicked">
+                               Try Out
+					        </Link>
+                        </div>
+                        <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
+                            <Link :href="`/user/exam-groups/${category.id}/lesson-categories`" class="menu-clicked">
+                            <div class="col">
+                                <div class="card radius-10 border-start border-0 border-3 border-danger">
+                                    <div class="card-body" style="background-color: #F6F5F5">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-bold">Try Out {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1">{{ totalDataInCategory.exam_group_count }} Try Out</h6>
+                                            </div>
+                                            <div class="text-danger ms-auto font-35"><i class='bx bx-file'></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            </Link>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card radius-10 border-start border-0 border-3 border-danger">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <p class="mb-0 text-bold">Try Out {{ totalDataInCategory.name }}</p>
-                                    <h6 class="my-1">{{ totalDataInCategory.exam_group_count }} Try Out</h6>
-                                </div>
-                                <div class="text-danger ms-auto font-35"><i class='bx bx-file'></i>
+
+                        <div>
+                        <Link href="/user/modules" class="menu-clicked">
+                            <div class="col">
+                                <div class="card radius-10 border-start border-0 border-3 border-warning">
+                                    <div class="card-body" style="background-color: #F6F5F5;">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-bold">Modul {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1">{{ totalDataInCategory.module_count }} Modul</h6>
+                                            </div>
+                                            <div class="text-warning ms-auto font-35"><i class='bx bx-book'></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </Link>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card radius-10 border-start border-0 border-3 border-warning">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <p class="mb-0 text-bold">Modul {{ totalDataInCategory.name }}</p>
-                                    <h6 class="my-1">{{ totalDataInCategory.module_count }} Modul</h6>
-                                </div>
-                                <div class="text-warning ms-auto font-35"><i class='bx bx-book'></i>
+
+                        <div>
+                        <Link href="/user/video-modules" class="menu-clicked">
+                            <div class="col">
+                                <div class="card radius-10 border-start border-0 border-3 border-success">
+                                    <div class="card-body" style="background-color: #F6F5F5">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <p class="mb-0 text-bold">Video Belajar {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1">{{ totalDataInCategory.video_module_count }}</h6>
+                                            </div>
+                                            <div class="text-success ms-auto font-35"><i class='bx bx-video'></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </Link>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card radius-10 border-start border-0 border-3 border-success">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <p class="mb-0 text-bold">Video Belajar {{ totalDataInCategory.name }}</p>
-                                    <h6 class="my-1">{{ totalDataInCategory.video_module_count }}</h6>
-                                </div>
-                                <div class="text-success ms-auto font-35"><i class='bx bx-video'></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4" v-if="transactions && $page.props.auth.user.member_type == 2">
@@ -123,7 +154,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <h6 class="mb-3">Pengumuman</h6>
+                            <h6 class="mb-3">Pemberitahuan</h6>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -132,12 +163,12 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Perihal</th>
-                                    <th>Actions</th>
+                                    <th>Lihat Pemberitahuan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-if="!announcementSummaries.length">
-                                    <td colspan="7" align="center">Data Pengumuman kosong</td>
+                                    <td colspan="7" align="center">Data Pemberitahuan kosong</td>
                                 </tr>
                                 <tr v-for="(announcementSummary, index) in announcementSummaries" :key="index">
                                     <td>{{ ++index }}</td>

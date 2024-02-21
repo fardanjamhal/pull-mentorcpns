@@ -1,19 +1,19 @@
 <template>
     <Head>
-        <title>{{ $page.props.setting.app_name ?? 'Atur Setting Terlebih Dahulu' }} - Data Pengumuman</title>
+        <title>{{ $page.props.setting.app_name ?? 'Atur Setting Terlebih Dahulu' }} - Data Pemberitahuan</title>
     </Head>
     <!--start page wrapper -->
     <div class="page-wrapper">
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">Pengumuman</div>
+                <div class="breadcrumb-title pe-3">Pemberitahuan</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data Pengumuman</li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Pemberitahuan</li>
                         </ol>
                     </nav>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
-                            <h6 class="mb-3">Pengumuman</h6>
+                            <h6 class="mb-3">Pemberitahuan</h6>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -32,14 +32,14 @@
                             <thead class="table-light">
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Created at</th>
-                                    <th>Actions</th>
+                                    <th>Perihal</th>
+                                    <th>Dibuat</th>
+                                    <th>Lihat Pemberitahuan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td align="center" colspan="4" v-if="!announcements.data.length">Data Pengumuman kosong</td>
+                                    <td align="center" colspan="4" v-if="!announcements.data.length">Data Pemberitahuan kosong</td>
                                 </tr>
                                 <tr v-for="(announcement, index) in announcements.data" :key="index">
                                     <td>
