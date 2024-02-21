@@ -1429,9 +1429,9 @@
     "file": "assets/Layout.ea5df0e9.css",
     "src": "Layout.css"
   },
-  "resources/js/Pages/User/TryOut/ExamGroup/Question.css": {
+  "resources/js/Pages/User/TryOut/Exam/Question.css": {
     "file": "assets/Question.87b6b1c9.css",
-    "src": "resources/js/Pages/User/TryOut/ExamGroup/Question.css"
+    "src": "resources/js/Pages/User/TryOut/Exam/Question.css"
   },
   "vue3-multiselect.css": {
     "file": "assets/vue3-multiselect.ad4fdbaf.css",
