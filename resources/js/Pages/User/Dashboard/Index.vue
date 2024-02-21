@@ -15,14 +15,14 @@
                         <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
                             <Link :href="`/user/categories/${category.id}/lesson-categories`" class="menu-clicked">
                                 <div class="col">
-                                    <div class="card radius-10 border-start border-0 border-3 border-primary">
-                                        <div class="card-body" style="background-color: #F6F5F5;">
+                                    <div class="card radius-10 border-start border-0 border-3 border-primary bg-primary bg-gradient">
+                                        <div class="card-body">
                                             <div class="d-flex align-items-center">
                                                 <div>
-                                                    <p class="mb-0 text-bold">Latihan Soal {{ totalDataInCategory.name }}</p>
-                                                    <h6 class="my-1">{{ totalDataInCategory.exam_count }} Soal</h6>
+                                                    <p class="mb-0 text-white">Latihan Soal {{ totalDataInCategory.name }}</p>
+                                                    <h6 class="my-1 text-white">{{ totalDataInCategory.exam_count }} Soal</h6>
                                                 </div>
-                                                <div class="text-primary ms-auto font-35"><i class='bx bx-file'></i>
+                                                <div class="text-primary ms-auto font-35"><i class='bx bx-file' style="color: white;"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -39,14 +39,14 @@
                         <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
                             <Link :href="`/user/exam-groups/${category.id}/lesson-categories`" class="menu-clicked">
                             <div class="col">
-                                <div class="card radius-10 border-start border-0 border-3 border-danger">
-                                    <div class="card-body" style="background-color: #F6F5F5">
+                                <div class="card radius-10 border-start border-0 border-3 border-danger bg-danger bg-gradient">
+                                    <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-bold">Try Out {{ totalDataInCategory.name }}</p>
-                                                <h6 class="my-1">{{ totalDataInCategory.exam_group_count }} Try Out</h6>
+                                                <p class="mb-0 text-white">Try Out {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1 text-white">{{ totalDataInCategory.exam_group_count }} Try Out</h6>
                                             </div>
-                                            <div class="text-danger ms-auto font-35"><i class='bx bx-file'></i>
+                                            <div class="text-danger ms-auto font-35"><i class='bx bx-file' style="color: white;"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -58,14 +58,14 @@
                         <div>
                         <Link href="/user/modules" class="menu-clicked">
                             <div class="col">
-                                <div class="card radius-10 border-start border-0 border-3 border-warning">
-                                    <div class="card-body" style="background-color: #F6F5F5;">
+                                <div class="card radius-10 border-start border-0 border-3 border-warning bg-warning bg-gradient">
+                                    <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-bold">Modul {{ totalDataInCategory.name }}</p>
-                                                <h6 class="my-1">{{ totalDataInCategory.module_count }} Modul</h6>
+                                                <p class="mb-0 text-white">Modul {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1 text-white">{{ totalDataInCategory.module_count }} Modul</h6>
                                             </div>
-                                            <div class="text-warning ms-auto font-35"><i class='bx bx-book'></i>
+                                            <div class="text-warning ms-auto font-35"><i class='bx bx-book' style="color: white;"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -77,14 +77,14 @@
                         <div>
                         <Link href="/user/video-modules" class="menu-clicked">
                             <div class="col">
-                                <div class="card radius-10 border-start border-0 border-3 border-success">
-                                    <div class="card-body" style="background-color: #F6F5F5">
+                                <div class="card radius-10 border-start border-0 border-3 border-success bg-success bg-gradient">
+                                    <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-bold">Video Belajar {{ totalDataInCategory.name }}</p>
-                                                <h6 class="my-1">{{ totalDataInCategory.video_module_count }}</h6>
+                                                <p class="mb-0 text-white">Video Belajar {{ totalDataInCategory.name }}</p>
+                                                <h6 class="my-1 text-white">{{ totalDataInCategory.video_module_count }}</h6>
                                             </div>
-                                            <div class="text-success ms-auto font-35"><i class='bx bx-video'></i>
+                                            <div class="text-success ms-auto font-35"><i class='bx bx-video' style="color: white;"></i>
                                             </div>
                                         </div>
                                     </div>
