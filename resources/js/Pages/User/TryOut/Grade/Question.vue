@@ -84,8 +84,9 @@
                         </div>
                         <div class="card-footer" style="min-height: 60px;">
                             <div class="text-center">
-                                <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-primary btn-sm me-3">Sebelumnya</button>
-                                <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-success btn-sm">Selanjutnya</button>
+                                <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">&lt; previous</button>
+                                &nbsp;
+                                <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">next ></button>
                             </div>
                         </div>
                     </div>

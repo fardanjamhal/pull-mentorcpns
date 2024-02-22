@@ -27,15 +27,15 @@
                         <div class="d-flex justify-content-between">
                             <div class="text-start">
                                 <div v-if="exam.show_question_number == 1">
-                                    <h4 class="mb-0 text-white"><span class="badge bg-danger">No. {{ questionLists[indexPage]['navigation_order'] }}</span></h4>
+                                    <h4 class="mb-0 text-white"><span class="badge">No. {{ questionLists[indexPage]['navigation_order'] }}</span></h4>
                                 </div>
                             </div>
                             <div class="text-end">
                                 <VueCountdown :transform="transform" :time="duration" @progress="handleChangeDuration" @end="showModalEndTimeExam = true" v-slot="{ hours, minutes, seconds }">
                                     <h4 class="mb-0 text-white">
-                                        <span class="badge bg-danger mx-3">Sisa Waktu</span>
-                                        <span class="badge bg-danger" v-if="exam.duration >= 60">{{ hours }} : {{ minutes }} : {{ seconds }}</span>
-                                        <span class="badge bg-danger" v-else>{{ minutes }} : {{ seconds }}</span>
+                                        <!-- <span class="badge bg-danger mx-3">Sisa Waktu</span> -->
+                                        <span class="badge" v-if="exam.duration >= 60">{{ hours }} : {{ minutes }} : {{ seconds }}</span>
+                                        <span class="badge" v-else>{{ minutes }} : {{ seconds }}</span>
                                     </h4>
                                 </VueCountdown>
                             </div>
@@ -86,11 +86,12 @@
                         </span>
                     </div>
                     <div class="card-footer" style="min-height: 60px;">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-center">
                             <div class="text-start">
                                 <div  v-if="exam.show_prev_next_button == 1">
-                                    <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-primary me-3">Sebelumnya</button>
-                                    <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-success">Selanjutnya</button>
+                                    <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">&lt; previous</button>
+                                    &nbsp;
+                                    <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">next ></button>
                                 </div>
                             </div>
                             <div class="text-center" v-if="exam.show_question_number_navigation == 0">

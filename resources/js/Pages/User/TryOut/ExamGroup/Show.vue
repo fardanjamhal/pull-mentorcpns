@@ -84,9 +84,6 @@
                                                 <td>{{ $page.props.auth.user.username ?? '-' }}</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="3">&nbsp;</td>
-                                            </tr>
-                                            <tr>
                                                 <th>Peminatan</th>
                                                 <td>:</td>
                                                 <td><span class="badge bg-primary">{{ examGroup.category.name }}</span></td>
@@ -274,14 +271,15 @@
                                                 <span class="badge bg-warning text-dark" v-if="examGroup.exam_status == 'inactive'">Ujian Tidak Aktif</span>
                                                 <div v-if="examGroup.exam_status == 'active'">
                                                     <div class="text-left" v-if="!examGroupUser">
-                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-primary px-5">Mulai Kerjakan</Link>
+                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 13vh;">Mulai Kerjakan</Link>
                                                     </div>
                                                     <div class="text-left" v-else-if="examGroupUser && examGroupUser.is_finished == 0">
-                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-warning px-5">Lanjut Mengerjakan</Link>
+                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-warning">Lanjut Mengerjakan</Link>
                                                     </div>
                                                     <div class="text-left" v-else-if="examGroupUser && examGroupUser.is_finished == 1">
-                                                        <Link :href="`/user/exam-groups/histories/${examGroupUser.id}`" class="btn btn-sm btn-success px-5 mx-1">Hasil</Link>
-                                                        <a href="#" @click.prevent="repeatExamGroup(examGroup.id)" class="btn btn-sm btn-secondary px-5 mx-1" v-if="examGroup.repeat_the_exam == 1">Ulangi</a>
+                                                        <a href="#" @click.prevent="repeatExamGroup(examGroup.id)" class="btn btn-sm btn-danger" style="width: 13vh;" v-if="examGroup.repeat_the_exam == 1">Ulangi</a>
+                                                        &nbsp;
+                                                        <Link :href="`/user/exam-groups/histories/${examGroupUser.id}`" class="btn btn-sm btn-secondary" style="width: 13vh;">Hasil</Link>
                                                     </div>
                                                 </div>
                                             </td>

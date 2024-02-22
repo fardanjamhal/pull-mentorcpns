@@ -141,17 +141,19 @@
                                             <td colspan="3">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3">
+                                            <td colspan="9">
                                                 <div class="text-center" v-if="!grade">
-                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-primary">Mulai Kerjakan</Link>
+                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 13vh;">Mulai Kerjakan</Link>
                                                 </div>
                                                 <div class="text-center" v-else-if="grade && grade.is_finished == 0">
-                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-warning">Lanjut Mengerjakan</Link>
+                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-warning" style="width: 19vh;">Lanjut Mengerjakan</Link>
                                                 </div>
                                                 <div class="text-center" v-else-if="grade && grade.is_finished == 1">
-                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-secondary px-5 mx-1" v-if="exam.repeat_the_exam == 1">Ulangi</a>
-                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-success px-5 mx-1">Hasil</Link>
-                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary px-5 mx-1">Pembahasan</Link>
+                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-danger" style="width: 13vh;" v-if="exam.repeat_the_exam == 1">Tes Ulang</a>
+                                                    &nbsp;
+                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-primary" style="width: 13vh;">Hasil</Link>
+                                                    &nbsp;
+                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary" style="width: 13vh;">Pembahasan</Link>
                                                 </div>
                                             </td>
                                         </tr>

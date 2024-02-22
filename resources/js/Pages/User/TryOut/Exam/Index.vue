@@ -46,7 +46,7 @@
                         <div v-html="$page.props.session.success"></div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" v-for="(exam, index) in exams.data" :key="index">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="width: 25vh;" v-for="(exam, index) in exams.data" :key="index">
                     <div class="card">       
                         <div v-if="$page.props.auth.user.member_type == 2">
                             <span v-if="(exam.transaction.length > 0 || checkMemberCategories(exam.member_categories) == true) && exam.member_categories" class="badge bg-danger" style="position:absolute; font-size: 14px; margin:4px;">Enrolled</span>
@@ -57,7 +57,7 @@
 
                         <div class="card-header">
                             <h6 class="card-title">{{ exam.title }}</h6>
-                            <p class="card-text">Kerjakan Soal Sesuai Perintah Yang Ada Dalam Informasi.</p>
+                            <!-- <p class="card-text">Kerjakan Soal Sesuai Perintah Yang Ada Dalam Informasi.</p> -->
                         </div>
                         <div class="card-body" v-if="$page.props.auth.user.member_type == 2">  
                             <div v-if="($page.props.setting.purchase_type == 1 || $page.props.setting.purchase_type == 3)"  style="min-height: 50px;">

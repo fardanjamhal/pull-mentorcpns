@@ -34,7 +34,7 @@
             <div v-for="category in categoryVideoModules">
                 <h5 class="mb-3">Video Pembelajaran {{ category.name }}</h5>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" v-for="videoModule in category.video_module">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" v-for="videoModule in category.video_module">
 
                         <div class="card">
                             <span class="badge bg-danger" style="position:absolute; right:-15px; top:-15px; width:50px; height: 35px; font-size: 20px;">
@@ -45,16 +45,16 @@
                                     <h6 class="mb-0">{{ videoModule.title }}</h6>
                                 </div>
                                 <hr/>
-                                <p class="card-text" style="min-height: 60px;">{{ videoModule.description }}</p>
+                                <p class="card-text" style="min-height: 50px;">{{ videoModule.description }}</p>
                                 <div class="text-center">
-                                    <p>Kategori Member</p>
+                                    <!-- <p>Kategori Member</p> -->
                                     <span v-if="videoModule.member_categories" v-for="member_categories in videoModule.member_categories" class="badge bg-success m-1">
                                         {{  member_categories  }}
                                     </span>
                                     <span v-else class="badge bg-success mb-0">Seluruh Member & Non Member</span>
                                 </div>
-                                <hr/>
-                                <div class="text-center">
+                                <!-- <hr/> -->
+                                <div class="text-center" style="margin-top: 3px;">
                                     <div v-if="checkMemberCategories(videoModule.category_id, videoModule.member_categories) == true">
                                         <a :href="videoModule.link" class="btn btn-primary btn-sm" target="_blank">Buka Video</a>
                                     </div>

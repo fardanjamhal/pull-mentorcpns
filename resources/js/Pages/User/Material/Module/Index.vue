@@ -34,7 +34,7 @@
             <div v-for="category in categoryModules">
                 <h5 class="mb-3">Materi / Modul {{ category.name }}</h5>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" v-for="materialModule in category.module">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" v-for="materialModule in category.module">
                         <div class="card">
                             <span class="badge bg-success" style="position:absolute; right:-15px; top:-15px; width:50px; height: 35px; font-size: 20px;">
                                 <i class="fadeIn animated bx bx-book"></i>
@@ -44,16 +44,16 @@
                                     <h6 class="mb-0">{{ materialModule.title }}</h6>
                                 </div>
                                 <hr/>
-                                <p class="card-text" style="min-height: 60px;">{{ materialModule.description }}</p>
+                                <p class="card-text" style="min-height: 50px;">{{ materialModule.description }}</p>
                                 <div class="text-center">
-                                    <p>Kategori Member</p>
+                                    <!-- <p>Kategori Member</p> -->
                                     <span v-if="materialModule.member_categories" v-for="member_categories in materialModule.member_categories" class="badge bg-success m-1">
                                         {{  member_categories  }}
                                     </span>
                                     <span v-else class="badge bg-success mb-0">Seluruh Member & Non Member</span>
                                 </div>
-                                <hr/>
-                                <div class="text-center">
+                                <!-- <hr/> -->
+                                <div class="text-center" style="margin-top: 3px;">
                                     <div v-if="checkMemberCategories(materialModule.category_id, materialModule.member_categories) == true">
                                         <a :href="materialModule.link" class="btn btn-primary btn-sm" target="_blank">Buka Materi</a>
                                     </div>
