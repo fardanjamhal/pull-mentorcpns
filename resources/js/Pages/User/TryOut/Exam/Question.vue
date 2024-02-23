@@ -3,10 +3,10 @@
         <title>{{ $page.props.setting.app_name ?? 'Atur Setting Terlebih Dahulu' }} - Sesi Ujian</title>
     </Head>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white rounded fixed-top rounded-0 shadow-sm">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white rounded fixed-top rounded-0 shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <!-- <img src="/assets/images/logo-img.png" width="140" alt="" /> -->
+               <img src="/assets/images/logo-img.png" width="140" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
             </button>
@@ -17,9 +17,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!--start page wrapper -->
-    <div class="container" style="margin-top: 100px;margin-bottom: 100px;">
+    <div class="container" style="margin-top: 20px;margin-bottom: 20px;">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12" :class="exam.show_question_number_navigation == 1 ? 'col-lg-8' : 'col-lg-12'">
                 <div class="card">
@@ -51,7 +51,7 @@
                                     <tr v-for="(answer, index) in (questionLists[indexPage]['answer_order'].split(','))" :key="index">
                                         <span>
                                             <td width="50" style="padding: 10px;">
-                                                <button v-if="answer == getMyAnswer(questionLists[indexPage]['question_id'])"  @click="submitAnswer(questionLists[indexPage]['question_id'], answer)" class="btn btn-success text-white">{{ options[index] }}</button>
+                                                <button v-if="answer == getMyAnswer(questionLists[indexPage]['question_id'])"  @click="submitAnswer(questionLists[indexPage]['question_id'], answer)" class="btn btn-primary text-white">{{ options[index] }}</button>
                                                 <button v-else @click="submitAnswer(questionLists[indexPage]['question_id'], answer)" class="btn btn-outline-primary w-100 no-click-effect">{{ options[index] }}</button>
                                             </td>
                                             <td style="padding: 10px;">
@@ -118,13 +118,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body" style="height: 480px; overflow-y: auto">
+                    <div class="card-body" style="height: auto; overflow-y: auto">
                         <div v-for="(question, index) in questionLists" :key="index">
                             <div style="width: 20%; float: left;">
                                 <div style="padding: 2px;">
                                     <button @click="clickQuestion(index)" v-if="index == indexPage" class="btn btn-primary w-100"><span style="font-size:11px; font-weight: 500;">{{ question.navigation_order }}</span></button>
                                     <button @click="clickQuestion(index)" v-if="index != indexPage && getMyAnswer(question.question_id) == 0" class="btn btn-light w-100"><span style="font-size:11px; font-weight: 500;">{{ question.navigation_order }}</span></button>
-                                    <button @click="clickQuestion(index)" v-if="index != indexPage && getMyAnswer(question.question_id) != 0" class="btn btn-success w-100"><span style="font-size:11px; font-weight: 500;">{{ question.navigation_order }}</span></button>
+                                    <button @click="clickQuestion(index)" v-if="index != indexPage && getMyAnswer(question.question_id) != 0" class="btn btn-danger w-100"><span style="font-size:11px; font-weight: 500;">{{ question.navigation_order }}</span></button>
                                 </div>
                             </div>
                         </div>
@@ -157,8 +157,8 @@
                     Setelah mengakhiri Try Out, Anda tidak dapat kembali ke Try Out ini lagi. Yakin akan mengakhiri Try Out?
                 </div>
                 <div class="modal-footer">
-                    <button @click="endExam" type="button" class="btn btn-primary">Ya, Akhiri</button>
-                    <button @click="showModalEndExam = false" type="button" class="btn btn-secondary">Tutup</button>
+                    <button @click="endExam" type="button" class="btn btn-danger" style="width: 6rem;">Ya</button>
+                    <button @click="showModalEndExam = false" type="button" class="btn btn-secondary" style="width: 6rem;">Tidak</button>
                 </div>
             </div>
         </div>
