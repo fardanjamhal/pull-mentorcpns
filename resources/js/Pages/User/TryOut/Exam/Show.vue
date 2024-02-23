@@ -148,11 +148,11 @@
                                                     <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-warning" style="width: 19vh;">Lanjut Mengerjakan</Link>
                                                 </div>
                                                 <div class="text-center" v-else-if="grade && grade.is_finished == 1">
-                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-danger" style="width: 13vh;margin: 6px;" v-if="exam.repeat_the_exam == 1">Tes Ulang</a>
+                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-danger" style="width: 16vh;margin: 6px;" v-if="exam.repeat_the_exam == 1">Tes Ulang</a>
                                                     &nbsp;
-                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-primary" style="width: 13vh;margin: 6px;">Hasil</Link>
+                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-primary" style="width: 16vh;margin: 6px;">Hasil</Link>
                                                     &nbsp;
-                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary" style="width: 13vh; margin: 6px;">Pembahasan</Link>
+                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary" style="width: 16vh; margin: 6px;">Pembahasan</Link>
                                                 </div>
                                             </td>
                                         </tr>

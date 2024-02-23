@@ -84,9 +84,9 @@
                         </div>
                         <div class="card-footer" style="min-height: 60px;">
                             <div class="text-center">
-                                <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">&lt; previous</button>
+                                <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">&lt;&lt;</button>
                                 &nbsp;
-                                <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">next ></button>
+                                <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">>></button>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="card-footer text-center">
                             <div class="row">
                                 <div class="col-md-6 sm-12">
-                                    <button type="button" class="w-100 mt-2 btn-sm btn btn-primary">Soal Saat Ini</button>
+                                    <button type="button" class="w-100 mt-2 btn-sm btn btn-primary">Soal</button>
                                 </div>
                                 <div class="col-md-6 sm-12">
                                     <button type="button" class="w-100 mt-2 btn-sm btn btn-success">{{ exam.question_title.assessment_type == 4 ? 'Dijawab' : 'Jawaban Benar' }}</button>
