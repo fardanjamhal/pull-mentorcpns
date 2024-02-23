@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header bg-primary">
                             <h5 class="mb-0 text-white" data-bs-toggle="collapse" href="#collapseDetailTryOutInformation" aria-expanded="false" @click="toggleCollapseDetailTryOutInformation">
                                 Informasi
@@ -50,7 +50,7 @@
                                 <div v-html="exam.description"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-lg-12">
@@ -72,26 +72,25 @@
                                             <td>:</td>
                                             <td>{{ $page.props.auth.user.name }}</td>
                                         </tr>
-
                                         <tr>
                                             <th width="300px">Email</th>
                                             <td width="2px">:</td>
                                             <td>{{ $page.props.auth.user.email ?? '-' }}</td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th>Username</th>
                                             <td>:</td>
                                             <td>{{ $page.props.auth.user.username ?? '-' }}</td>
-                                        </tr>
-                                        <tr>
+                                        </tr> -->
+                                        <!-- <tr>
                                             <td colspan="3">&nbsp;</td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                             <th>Peminatan</th>
                                             <td>:</td>
                                             <td><span class="badge bg-primary">{{ exam.category.name }}</span></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th>Sub peminatan khusus untuk</th>
                                             <td>:</td>
                                             <td>
@@ -105,10 +104,10 @@
                                                     <span>Seluruh kategori peminatan</span>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
                                         <tr>
-                                            <th>Kategori Mata Pelajaran</th>
+                                            <th>Kategori</th>
                                             <td>:</td>
                                             <td>{{ exam.lesson_category.name }}</td>
                                         </tr>
@@ -117,11 +116,11 @@
                                             <td>:</td>
                                             <td>{{ exam.lesson.name }}</td>
                                         </tr>
-                                        <tr>
-                                            <th>Judul Try Out</th>
+                                        <!-- <tr>
+                                            <th>Judul</th>
                                             <td>:</td>
                                             <td>{{ exam.title }}</td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                             <th>Durasi</th>
                                             <td>:</td>
@@ -137,23 +136,23 @@
                                                 <span v-else class="badge bg-danger">Untuk Seluruh Kategori Member</span>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td colspan="3">&nbsp;</td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                             <td colspan="9">
                                                 <div class="text-center" v-if="!grade">
-                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 13vh;">Mulai Kerjakan</Link>
+                                                    <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 16vh;">Mulai Kerjakan</Link>
                                                 </div>
                                                 <div class="text-center" v-else-if="grade && grade.is_finished == 0">
                                                     <Link :href="`/user/exams/${exam.id}/exam-start`" class="btn btn-sm btn-warning" style="width: 19vh;">Lanjut Mengerjakan</Link>
                                                 </div>
                                                 <div class="text-center" v-else-if="grade && grade.is_finished == 1">
-                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-danger" style="width: 13vh;" v-if="exam.repeat_the_exam == 1">Tes Ulang</a>
+                                                    <a href="#" @click.prevent="repeatExam()" class="btn btn-sm btn-danger" style="width: 13vh;margin: 6px;" v-if="exam.repeat_the_exam == 1">Tes Ulang</a>
                                                     &nbsp;
-                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-primary" style="width: 13vh;">Hasil</Link>
+                                                    <Link :href="`/user/grades/${grade.id}`" class="btn btn-sm btn-primary" style="width: 13vh;margin: 6px;">Hasil</Link>
                                                     &nbsp;
-                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary" style="width: 13vh;">Pembahasan</Link>
+                                                    <Link :href="`/user/grades/${grade.id}/questions`" v-if="exam.show_answer_discussion == 1" class="btn btn-sm btn-primary" style="width: 13vh; margin: 6px;">Pembahasan</Link>
                                                 </div>
                                             </td>
                                         </tr>

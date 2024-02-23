@@ -39,16 +39,17 @@
                             </div>
                         </form>
                         <div class="ms-auto">
-                            <Link href="/admin/lesson-categories/create" class="btn btn-primary btn-sm mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i> Tambah Kategori Mata Pelajaran</Link>
+                            <Link href="/admin/lesson-categories/create" class="btn btn-primary btn-sm mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i> Tambah Kategori</Link>
                         </div>
                     </div>
+                    <div class="table-responsive">
                     <table class="table mb-0">
                         <thead class="table-light">
                             <tr>
                                 <th>No</th>
-                                <th width="200px">Kategori Mata Pelajaran</th>
-                                <th width="200px">Thumbnail</th>
-                                <th width="200px">Kategori Peminatan</th>
+                                <th>Kategori Mata Pelajaran</th>
+                                <th>Thumbnail</th>
+                                <th>Kategori Peminatan</th>
                                 <th>Deskripsi</th>
                                 <th>Actions</th>
                             </tr>
@@ -80,7 +81,8 @@
                                 <td align="center" colspan="6" v-if="!lessonCategories.data.length">Data Tidak Tersedia</td>
                             </tr>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
 
                     <Pagination :links="lessonCategories.links" align="end" />
 

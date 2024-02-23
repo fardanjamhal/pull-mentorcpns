@@ -89,9 +89,9 @@
                         <div class="d-flex justify-content-center">
                             <div class="text-start">
                                 <div  v-if="exam.show_prev_next_button == 1">
-                                    <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">&lt; previous</button>
+                                    <button v-if="indexPage > 0" @click="prevPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 9vh;">&lt;&lt;</button>
                                     &nbsp;
-                                    <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 12vh;">next ></button>
+                                    <button v-if="indexPage < Object.keys(questionLists).length - 1" @click="nextPage()" type="button" class="btn btn-danger btn-md border-0 shadow" style="width: 9vh;">>></button>
                                 </div>
                             </div>
                             <div class="text-center" v-if="exam.show_question_number_navigation == 0">

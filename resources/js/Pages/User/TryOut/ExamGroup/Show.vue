@@ -35,7 +35,7 @@
                         <div v-html="$page.props.session.success"></div>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header bg-primary">
                             <h5 class="mb-0 text-white" data-bs-toggle="collapse" href="#collapseTryOutGroupInformation" aria-expanded="false" @click="toggleCollapseTryOutGroupInformation">
@@ -51,13 +51,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header bg-primary">
                             <h5 class="mb-0 text-white" data-bs-toggle="collapse" href="#collapseTryOutGroupDescription" aria-expanded="false" @click="toggleCollapseTryOutGroupDescription">
-                                Deskripsi Try Out
+                                Data Peserta
                                 <a class="float-end" data-bs-toggle="collapse" href="#collapseTryOutGroupDescription" aria-expanded="false">
                                     <i class="text-white" :class="{ 'bx bx-chevron-down': collapseTryOutGroupDescription, 'bx bx-chevron-up': !collapseTryOutGroupDescription }"></i>
                                 </a>
@@ -78,17 +78,17 @@
                                                 <td width="2px">:</td>
                                                 <td>{{ $page.props.auth.user.email ?? '-' }}</td>
                                             </tr>
-                                            <tr>
+                                            <!-- <tr>
                                                 <th>Username</th>
                                                 <td>:</td>
                                                 <td>{{ $page.props.auth.user.username ?? '-' }}</td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
                                                 <th>Peminatan</th>
                                                 <td>:</td>
                                                 <td><span class="badge bg-primary">{{ examGroup.category.name }}</span></td>
                                             </tr>
-                                            <tr>
+                                            <!-- <tr>
                                                 <th>Sub peminatan khusus untuk</th>
                                                 <td>:</td>
                                                 <td>
@@ -102,14 +102,14 @@
                                                         <span>Seluruh kategori peminatan</span>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
-                                                <th>Kategori Mata Pelajaran</th>
+                                                <th>Kategori</th>
                                                 <td>:</td>
                                                 <td><span class="badge bg-success">{{ examGroup.lesson_category.name }}</span></td>
                                             </tr>
                                             <tr>
-                                                <th>Judul Try Out</th>
+                                                <th>Judul</th>
                                                 <td>:</td>
                                                 <td>{{ examGroup.title }}</td>
                                             </tr>
@@ -218,13 +218,13 @@
                                     </tr>
                                     
                                     <tbody v-for="(exam, index) in examGroup.exam" :key="index">
-                                        <tr>
+                                        <!-- <tr>
                                             <th>No</th>
                                             <td width="2px">:</td>
                                             <td>{{ index + 1 }}</td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
-                                            <th>Judul</th>
+                                            <th>Materi</th>
                                             <td>:</td>
                                             <td>{{ exam.title }}</td>
                                         </tr>
@@ -237,9 +237,9 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th colspan="3">&nbsp;</th>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
 
                                     <tbody>
@@ -271,15 +271,15 @@
                                                 <span class="badge bg-warning text-dark" v-if="examGroup.exam_status == 'inactive'">Ujian Tidak Aktif</span>
                                                 <div v-if="examGroup.exam_status == 'active'">
                                                     <div class="text-left" v-if="!examGroupUser">
-                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 13vh;">Mulai Kerjakan</Link>
+                                                        <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-primary" style="width: 16vh;">Mulai Kerjakan</Link>
                                                     </div>
                                                     <div class="text-left" v-else-if="examGroupUser && examGroupUser.is_finished == 0">
                                                         <Link :href="`/user/exam-groups/${examGroup.id}/exam-start`" class="btn btn-sm btn-warning">Lanjut Mengerjakan</Link>
                                                     </div>
                                                     <div class="text-left" v-else-if="examGroupUser && examGroupUser.is_finished == 1">
-                                                        <a href="#" @click.prevent="repeatExamGroup(examGroup.id)" class="btn btn-sm btn-danger" style="width: 13vh;" v-if="examGroup.repeat_the_exam == 1">Ulangi</a>
+                                                        <a href="#" @click.prevent="repeatExamGroup(examGroup.id)" class="btn btn-sm btn-danger" style="width: 16vh; margin: 6px;" v-if="examGroup.repeat_the_exam == 1">Tes Ulang</a>
                                                         &nbsp;
-                                                        <Link :href="`/user/exam-groups/histories/${examGroupUser.id}`" class="btn btn-sm btn-secondary" style="width: 13vh;">Hasil</Link>
+                                                        <Link :href="`/user/exam-groups/histories/${examGroupUser.id}`" class="btn btn-sm btn-secondary" style="width: 16vh; margin: 6px;">Hasil</Link>
                                                     </div>
                                                 </div>
                                             </td>
