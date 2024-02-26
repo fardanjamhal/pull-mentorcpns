@@ -45,7 +45,10 @@
                                     <td>
                                         {{ ++index + (announcements.current_page - 1) * announcements.per_page }}
                                     </td>
-                                    <td>{{ announcement.title }}</td>
+                                    <!-- <td>{{ announcement.title }}</td> -->
+                                    <td>
+                                        <Link :href="`/user/announcements/${announcement.id}`" class="ms-2">{{ announcement.title }}</Link>
+                                    </td>
                                     <td>{{ announcement.created_at }}</td>
                                     <td>
                                         <div class="d-flex order-actions">

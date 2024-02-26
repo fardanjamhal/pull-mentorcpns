@@ -24,21 +24,21 @@
                 <div class="card-body">
                     <div class="d-lg-flex align-items-center">
                         <div class="ms-auto">
-                            <Link href="/user/announcements" class="btn btn-primary btn-sm mt-2 mt-lg-0">Kembali</Link>
+                            <Link href="/user/dashboard" class="btn btn-primary btn-sm mt-2 mt-lg-0">Kembali</Link>
                         </div>
                     </div>
 
                     <table class="table mb-0">
                         <tbody>
-                            <tr><th>Judul</th></tr>
+                            <!-- <tr><th>Judul</th></tr> -->
                             <tr><td>{{ announcement.title }}</td></tr>
                             <tr><td colspan="2"></td></tr>
 
-                            <tr><th>Dibuat</th></tr>
+                            <!-- <tr><th>Dibuat</th></tr> -->
                             <tr><td>{{ announcement.created_at }}</td></tr>
                             <tr><td colspan="2"></td></tr>
 
-                            <tr><th>Deskripsi</th></tr>
+                            <!-- <tr><th>Deskripsi</th></tr> -->
                             <tr><td><div v-html="announcement.description"></div></td></tr>
                         </tbody>
                     </table>

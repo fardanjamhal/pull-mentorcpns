@@ -82,7 +82,8 @@
                                         <div class="d-flex align-items-center">
                                             <div>
                                                 <p class="mb-0 text-white">Video Belajar {{ totalDataInCategory.name }}</p>
-                                                <h6 class="my-1 text-white">{{ totalDataInCategory.video_module_count }}</h6>
+                                                <!-- <h6 class="my-1 text-white">{{ totalDataInCategory.video_module_count }}</h6> -->
+                                                <h6 class="my-1 text-white">5 Video</h6>
                                             </div>
                                             <div class="text-success ms-auto font-35"><i class='bx bx-video' style="color: white;"></i>
                                             </div>
@@ -172,7 +173,10 @@
                                 </tr>
                                 <tr v-for="(announcementSummary, index) in announcementSummaries" :key="index">
                                     <td>{{ ++index }}</td>
-                                    <td>{{ announcementSummary.title }}</td>
+                                    <!-- <td>{{ announcementSummary.title }}</td> -->
+                                    <td>
+                                        <Link :href="`/user/announcements/${announcementSummary.id}`" class="ms-2">{{ announcementSummary.title }}</Link>
+                                    </td>
                                     <td>
                                         <div class="d-flex order-actions">
                                             <Link :href="`/user/announcements/${announcementSummary.id}`" class="ms-2"><i class='bx bx-grid-alt'></i></Link>
