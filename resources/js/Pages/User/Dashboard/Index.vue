@@ -164,7 +164,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Perihal</th>
-                                    <th>Lihat Pemberitahuan</th>
+                                    <!-- <th>Lihat Pemberitahuan</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -177,11 +177,11 @@
                                     <td>
                                         <Link :href="`/user/announcements/${announcementSummary.id}`" class="ms-2">{{ announcementSummary.title }}</Link>
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         <div class="d-flex order-actions">
                                             <Link :href="`/user/announcements/${announcementSummary.id}`" class="ms-2"><i class='bx bx-grid-alt'></i></Link>
                                         </div>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>

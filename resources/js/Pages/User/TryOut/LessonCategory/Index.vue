@@ -41,8 +41,8 @@
                             <img  v-bind:src="'/storage/upload_files/lesson_categories/' + lessonCategory.thumbnail" class="card-img"/>
                         </div>
                         <div class="card-header">
-                            <h5 class="card-title">{{ lessonCategory.name }}</h5>
-                            <p class="card-text" style="height:50px;">{{ lessonCategory.description }}</p>
+                            <h5 class="card-title">Latihan Soal {{ lessonCategory.name }}</h5>
+                            <!-- <p class="card-text" style="height:50px;">{{ lessonCategory.description }}</p> -->
                         </div>
                         <div class="card-body">
                             <Link :href="`/user/categories/${lessonCategory.category_id}/lesson-categories/${lessonCategory.id}/lessons`" class="btn btn-outline-primary btn-sm w-100">Selengkapnya</Link>

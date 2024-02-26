@@ -58,114 +58,32 @@
                                     <div v-if="checkMemberCategories(videoModule.category_id, videoModule.member_categories) == true">
                                         <!-- <a :href="videoModule.link" class="btn btn-primary btn-sm" target="_blank">Buka Video2</a> -->
                                         <br>
-                                        <div class="text-start">
-                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleFullScreenModal">01 TIU : Deret</button>
-                                        </div>
-                                        <div class="modal fade" id="exampleFullScreenModal" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-fullscreen">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">01 TIU : Deret</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body p-0 m-0">
-                                                        <iframe width="100%" id="youtube-video" height="100%" :src="`https://www.youtube.com/embed/xMOq5WQM10A`" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
+
+                                        <p>Total Video: {{ jumlahData }}</p>
+
+                                        <div v-for="(video, index) in videos" :key="index">
+                                            <div class="text-start mb-3">
+                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" :data-bs-target="'#'+video.idVideo">{{ video.judul }}</button>
+                                            </div>
+                                            <div class="modal fade" :id="video.idVideo" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-fullscreen">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">{{ video.judul }}</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body p-0 m-0">
+                                                            <iframe width="100%" id="youtube-video" height="100%" :src="video.youtube" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <br>
-
-                                        <div class="text-start">
-                                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleFullScreenModal2">02 TWK : Nasionalisme (Part 1)</button>
-                                        </div>
-                                        <div class="modal fade" id="exampleFullScreenModal2" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-fullscreen">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">02 TWK : Nasionalisme (Part 1)</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body p-0 m-0">
-                                                        <iframe width="100%" id="youtube-video" height="100%" :src="`https://www.youtube.com/embed/HPIuHZ0xyfQ`" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br>
-
-                                        <div class="text-start">
-                                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleFullScreenModal3">03 TWK : Nasionalisme (Part 2)</button>
-                                        </div>
-                                        <div class="modal fade" id="exampleFullScreenModal3" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-fullscreen">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">03 TWK : Nasionalisme (Part 2)</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body p-0 m-0">
-                                                        <iframe width="100%" id="youtube-video" height="100%" :src="`https://www.youtube.com/embed/oua7mWZphGc`" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br>
-
-                                        <div class="text-start">
-                                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleFullScreenModal4">04 TWK : Nasionalisme (Part 3)</button>
-                                        </div>
-                                        <div class="modal fade" id="exampleFullScreenModal4" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-fullscreen">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">04 TWK : Nasionalisme (Part 3)</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body p-0 m-0">
-                                                        <iframe width="100%" id="youtube-video" height="100%" :src="`https://www.youtube.com/embed/CP84rYOmB0s`" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br>
-
-                                        <div class="text-start">
-                                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleFullScreenModal5">05 TIU : Analitis</button>
-                                        </div>
-                                        <div class="modal fade" id="exampleFullScreenModal5" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-fullscreen">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">05 TIU : Analitis</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" @click="closeVideo()" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body p-0 m-0">
-                                                        <iframe width="100%" id="youtube-video" height="100%" :src="`https://www.youtube.com/embed/VeCuOvkfnXk`" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  @click="closeVideo()">Tutup</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
 
                                     </div>
 
@@ -323,9 +241,42 @@
         
         data() {
             return {
-                selectedVideoModule: null
-            };
-        },
+                selectedVideoModule: null,
+                videos: [
+                    {
+                        judul: "01 TIU : Deret",
+                        youtube: "https://www.youtube.com/embed/xMOq5WQM10A",
+                        idVideo: "exampleFullScreenModal"
+                    },
+                    {
+                        judul: "02 TWK : Nasionalisme (Part 1)",
+                        youtube: "https://www.youtube.com/embed/HPIuHZ0xyfQ",
+                        idVideo: "exampleFullScreenModal2"
+                    },
+                    {
+                        judul: "03 TWK : Nasionalisme (Part 2)",
+                        youtube: "https://www.youtube.com/embed/oua7mWZphGc",
+                        idVideo: "exampleFullScreenModal3"
+                    },
+                    {
+                        judul: "04 TWK : Nasionalisme (Part 3)",
+                        youtube: "https://www.youtube.com/embed/CP84rYOmB0s",
+                        idVideo: "exampleFullScreenModal4"
+                    },
+                    {
+                        judul: "05 TIU : Analitis",
+                        youtube: "https://www.youtube.com/embed/VeCuOvkfnXk",
+                        idVideo: "exampleFullScreenModal5"
+                    },
+                ]
+                };
+            },
+        computed: {
+                jumlahData() {
+                // Mengembalikan jumlah data dalam array videos
+                return this.videos.length;
+                }
+            },
 
         methods: {
             // Memeriksa kategori member

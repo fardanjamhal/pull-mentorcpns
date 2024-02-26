@@ -13,7 +13,7 @@
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data Kategori Mata Pelajaran</li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Kategori Mata Pelajaran3</li>
                         </ol>
                     </nav>
                 </div>
@@ -36,19 +36,17 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12" v-for="lessonCategory in lessonCategories">
-                    <div class="card">
-                        <div class="row g-0">
-                            <div class="col-md-2 d-flex align-items-center p-2">
-                                <img v-bind:src="'/storage/upload_files/lesson_categories/' + lessonCategory.thumbnail" class="card-img"/>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="card-body">
-                                    <h5 class="card-title">Try Out {{ lessonCategory.name }}</h5>
-                                    <p class="card-text">{{ lessonCategory.description }}.</p>
-                                    <Link :href="`/user/exam-groups/${lessonCategory.category_id}/lesson-categories/${lessonCategory.id}/exams`" class="btn btn-outline-primary btn-sm">Selengkapnya</Link>
-                                </div>
-                            </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" v-for="lessonCategory in lessonCategories">
+                    <div class="card border-bottom border-3 border-0">
+                        <div class="p-2">
+                            <img v-bind:src="'/storage/upload_files/lesson_categories/' + lessonCategory.thumbnail" class="card-img"/>
+                        </div>
+                        <div class="card-header">
+                            <h5 class="card-title">Try Out {{ lessonCategory.name }}</h5>
+                            <!-- <p class="card-text" style="height:50px;">{{ lessonCategory.description }}.</p> -->
+                        </div>
+                        <div class="card-body">
+                            <Link :href="`/user/exam-groups/${lessonCategory.category_id}/lesson-categories/${lessonCategory.id}/exams`" class="btn btn-outline-primary btn-sm w-100">Selengkapnya</Link>
                         </div>
                     </div>
                 </div>
