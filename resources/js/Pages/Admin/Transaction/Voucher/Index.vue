@@ -64,9 +64,14 @@
                                     <td>{{ voucher.active_period }} {{ voucher.period_type == 'day' ? 'Hari' : 'Bulan' }}</td>
                                     <td>{{ formatPrice(voucher.price_after_discount) }}</td>
                                     <td>
-                                        <span v-if="voucher.member_categories" v-for="member_categories in voucher.member_categories" class="badge bg-success m-1">
+                                        <!-- <span v-if="voucher.member_categories" v-for="member_categories in voucher.member_categories" class="badge bg-success m-1">
                                             {{  member_categories  }}
+                                        </span> -->
+                                        <span v-if="voucher.member_categories" v-for="member_categories in voucher.member_categories" 
+                                            :class="['badge', 'm-1', { 'bg-info': member_categories === 'Basic Member', 'bg-warning': member_categories === 'Premium Member' }]">
+                                            {{ member_categories }}
                                         </span>
+
                                         <span v-else class="badge bg-danger">Tidak ada</span>
                                     </td>
                                     <td>
