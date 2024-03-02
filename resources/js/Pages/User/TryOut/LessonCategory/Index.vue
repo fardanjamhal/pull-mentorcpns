@@ -18,7 +18,8 @@
                     </nav>
                 </div>
                 <div class="ms-auto">
-                    <Link :href="`/user/categories`" class="btn btn-primary btn-sm mt-2 mt-lg-0">Kembali</Link>
+                    <!-- <Link :href="`/user/categories`" class="btn btn-primary btn-sm mt-2 mt-lg-0">Kembali</Link> -->
+                    <Link :href="`/user/dashboard`" class="btn btn-primary btn-sm mt-2 mt-lg-0">Kembali</Link>
                 </div>
             </div>
             <!--end breadcrumb-->
