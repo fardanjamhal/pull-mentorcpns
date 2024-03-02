@@ -7,29 +7,6 @@
         <div class="page-content">
             <div v-if="$page.props.setting.purchase_type != 1" class="row row-cols-1 row-cols-md-2 row-cols-xl-4" v-for="(totalDataInCategory, index) in totalDataInCategories" :key="index">
                 
-                        <div v-if="$page.props.voucherCategories.length > 1">
-                            <Link href="/user/categories" class="menu-clicked">
-                               Latihan Soal
-					        </Link>
-                        </div>
-                        <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
-                            <Link :href="`/user/categories/${category.id}/lesson-categories`" class="menu-clicked">
-                                <div class="col">
-                                    <div class="card radius-10 border-start border-0 border-3 border-primary bg-primary bg-gradient">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <p class="mb-0 text-white">Latihan Soal {{ totalDataInCategory.name }}</p>
-                                                    <h6 class="my-1 text-white">{{ totalDataInCategory.exam_count }} Soal</h6>
-                                                </div>
-                                                <div class="text-primary ms-auto font-35"><i class='bx bx-file' style="color: white;"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                            </Link>
-                        </div>
 
                         <div v-if="$page.props.voucherCategories.length > 1">
                             <Link href="/user/exam-groups" class="menu-clicked">
@@ -43,7 +20,8 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-white">Try Out {{ totalDataInCategory.name }}</p>
+                                                <!-- <p class="mb-0 text-white">Try Out {{ totalDataInCategory.name }}</p> -->
+                                                <p class="mb-0 text-white">Try Out CPNS & PPPK</p>
                                                 <h6 class="my-1 text-white">{{ totalDataInCategory.exam_group_count }} Try Out</h6>
                                             </div>
                                             <div class="text-danger ms-auto font-35"><i class='bx bx-file' style="color: white;"></i>
@@ -55,6 +33,31 @@
                             </Link>
                         </div>
 
+                        <div v-if="$page.props.voucherCategories.length > 1">
+                            <Link href="/user/categories" class="menu-clicked">
+                               Latihan Soal
+					        </Link>
+                        </div>
+                        <div v-else v-for="(category, index) in $page.props.voucherCategories" :key="index">
+                            <Link :href="`/user/categories/${category.id}/lesson-categories`" class="menu-clicked">
+                                <div class="col">
+                                    <div class="card radius-10 border-start border-0 border-3 border-primary bg-primary bg-gradient">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <!-- <p class="mb-0 text-white">Latihan Soal {{ totalDataInCategory.name }}</p> -->
+                                                    <p class="mb-0 text-white">Latihan Soal CPNS & PPPK</p>
+                                                    <h6 class="my-1 text-white">{{ totalDataInCategory.exam_count }} Soal</h6>
+                                                </div>
+                                                <div class="text-primary ms-auto font-35"><i class='bx bx-file' style="color: white;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </Link>
+                        </div>
+
                         <div>
                         <Link href="/user/modules" class="menu-clicked">
                             <div class="col">
@@ -62,7 +65,8 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-white">Modul {{ totalDataInCategory.name }}</p>
+                                                <!-- <p class="mb-0 text-white">Modul {{ totalDataInCategory.name }}</p> -->
+                                                <p class="mb-0 text-white">Modul CPNS & PPPK</p>
                                                 <h6 class="my-1 text-white">{{ totalDataInCategory.module_count }} Modul</h6>
                                             </div>
                                             <div class="text-warning ms-auto font-35"><i class='bx bx-book' style="color: white;"></i>
@@ -81,7 +85,8 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center">
                                             <div>
-                                                <p class="mb-0 text-white">Video Belajar {{ totalDataInCategory.name }}</p>
+                                                <!-- <p class="mb-0 text-white">Video Belajar {{ totalDataInCategory.name }}</p> -->
+                                                <p class="mb-0 text-white">Video Belajar CPNS & PPPK</p>
                                                 <!-- <h6 class="my-1 text-white">{{ totalDataInCategory.video_module_count }}</h6> -->
                                                 <h6 class="my-1 text-white">5 Video</h6>
                                             </div>
