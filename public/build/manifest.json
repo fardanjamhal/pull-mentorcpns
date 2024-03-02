@@ -1429,12 +1429,12 @@
     "file": "assets/Layout.ea5df0e9.css",
     "src": "Layout.css"
   },
-  "resources/js/Pages/User/TryOut/ExamGroup/Question.css": {
-    "file": "assets/Question.87b6b1c9.css",
-    "src": "resources/js/Pages/User/TryOut/ExamGroup/Question.css"
-  },
   "vue3-multiselect.css": {
     "file": "assets/vue3-multiselect.ad4fdbaf.css",
     "src": "vue3-multiselect.css"
+  },
+  "resources/js/Pages/User/TryOut/ExamGroup/Question.css": {
+    "file": "assets/Question.87b6b1c9.css",
+    "src": "resources/js/Pages/User/TryOut/ExamGroup/Question.css"
   }
 }
