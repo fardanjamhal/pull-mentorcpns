@@ -268,6 +268,11 @@
                         youtube: "https://www.youtube.com/embed/VeCuOvkfnXk",
                         idVideo: "exampleFullScreenModal5"
                     },
+                    {
+                        judul: "06 TIU : Kemampuan Verbal",
+                        youtube: "https://www.youtube.com/embed/NS6dZ7tzXWQ",
+                        idVideo: "exampleFullScreenModal6"
+                    },
                 ]
                 };
             },
