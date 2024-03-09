@@ -269,10 +269,15 @@
                         idVideo: "exampleFullScreenModal5"
                     },
                     {
-                        judul: "06 TIU : Kemampuan Verbal",
+                        judul: "06 TIU : Figural Analogi",
                         youtube: "https://www.youtube.com/embed/NS6dZ7tzXWQ",
                         idVideo: "exampleFullScreenModal6"
                     },
+                    {
+                        judul: "07 TIU : Kemampuan Verbal",
+                        youtube: "https://www.youtube.com/embed/CoRRJy2Dkv8",
+                        idVideo: "exampleFullScreenModal7"
+                    }
                 ]
                 };
             },
