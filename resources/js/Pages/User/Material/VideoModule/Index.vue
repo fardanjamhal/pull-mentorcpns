@@ -63,7 +63,7 @@
 
                                         <div v-for="(video, index) in videos" :key="index">
                                             <div class="text-start mb-3">
-                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" :data-bs-target="'#'+video.idVideo">{{ video.judul }}</button>
+                                                <button type="button" :class="getClass(video.judul)" data-bs-toggle="modal" :data-bs-target="'#'+video.idVideo">{{ video.judul }}</button>
                                             </div>
                                             <div class="modal fade" :id="video.idVideo" tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-fullscreen">
@@ -277,6 +277,11 @@
                         judul: "07 TIU : Kemampuan Verbal",
                         youtube: "https://www.youtube.com/embed/CoRRJy2Dkv8",
                         idVideo: "exampleFullScreenModal7"
+                    },
+                    {
+                        judul: "08 TIU : Silogisme",
+                        youtube: "https://www.youtube.com/embed/3jD0pUxGlN4",
+                        idVideo: "exampleFullScreenModal8"
                     }
                 ]
                 };
@@ -324,6 +329,24 @@
             openModal(videoModule) {
                 this.selectedVideoModule = videoModule;
                 $('#exampleFullScreenModal').modal('show'); // Menampilkan modal menggunakan jQuery
+            },
+            getClass(judul) {
+                // Definisikan pilihan warna berdasarkan kondisi tertentu pada judul
+                const colorOptions = {
+                    'TIU': 'btn btn-sm btn-danger',
+                    'TWK': 'btn btn-sm btn-primary',
+                    'TKP': 'btn btn-sm btn-success',
+                };
+
+                // Cek setiap kondisi dan kembalikan warna yang sesuai
+                for (const option in colorOptions) {
+                    if (judul.includes(option)) {
+                        return colorOptions[option];
+                    }
+                }
+
+                // Jika tidak ada kondisi yang cocok, kembalikan kelas default
+                return 'btn btn-sm btn-secondary';
             }
         }
     }

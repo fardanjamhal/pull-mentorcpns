@@ -88,7 +88,7 @@
                                                 <!-- <p class="mb-0 text-white">Video Belajar {{ totalDataInCategory.name }}</p> -->
                                                 <p class="mb-0 text-white">Video Belajar CPNS & PPPK</p>
                                                 <!-- <h6 class="my-1 text-white">{{ totalDataInCategory.video_module_count }}</h6> -->
-                                                <h6 class="my-1 text-white">5 Video</h6>
+                                                <h6 class="my-1 text-white">8 Video</h6>
                                             </div>
                                             <div class="text-success ms-auto font-35"><i class='bx bx-video' style="color: white;"></i>
                                             </div>
