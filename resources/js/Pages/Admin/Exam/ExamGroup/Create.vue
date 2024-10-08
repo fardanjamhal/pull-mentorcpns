@@ -88,7 +88,7 @@
                         <div class="col-12">
                             <label class="form-label">Deskripsi Try Out</label>
                             <Editor
-                                api-key="ks7buom19yw30zn9i2t0x36p1j5yn8mch71i5ek9fz9xpivd"
+                                api-key="78gw58jnh98gnhix73b37osdkyoq9njwvzgo05s9sjyf9a55"
                                 v-model="form.description"
                                 :init="{
                                     images_upload_url: '/upload',
