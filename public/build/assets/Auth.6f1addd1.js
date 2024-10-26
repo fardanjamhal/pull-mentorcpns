@@ -1,1 +1,0 @@
-import{_ as t}from"./_plugin-vue_export-helper.cdc0426e.js";import{o as e,c as s,i as r}from"./app.6cf705fe.js";const a={},c={class:"wrapper"};function n(o,p,_,i,d,f){return e(),s("div",c,[r(o.$slots,"default")])}const u=t(a,[["render",n]]);export{u as L};
