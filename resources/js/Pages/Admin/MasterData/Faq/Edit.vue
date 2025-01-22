@@ -38,7 +38,7 @@
                         <div class="col-12">
                             <label class="form-label"><b>Jawaban</b></label>
                             <Editor
-                                api-key="wcihyvnlo8xq5nmvwzduo9uq9yc46c78z81499i6y8sb3bzs"
+                                api-key="z0orjv2sirc3srvbm5cveadi07v3y2i0voly8s87wdik0l0r"
                                 v-model="form.answer"
                                 :init="{
                                     automatic_uploads: true,
